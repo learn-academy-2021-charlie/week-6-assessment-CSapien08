@@ -7,9 +7,11 @@
 # FILE: app/controller/blog_posts_controller.rb
 
 # ---1)
+# This defines the controller Blog Posts
 class BlogPostsController < ApplicationController
   def index
     # ---2)
+    # 
     @posts = BlogPost.all
   end
 
@@ -41,6 +43,7 @@ class BlogPostsController < ApplicationController
   def update
     @post = BlogPost.find(params[:id])
     # ---7)
+    #
     @post.update(blog_post_params)
     if @post.valid?
       redirect_to blog_post_path(@post)
